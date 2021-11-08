@@ -1,0 +1,117 @@
+package org.hravemzdy.legalios.protokols
+
+import org.hravemzdy.legalios.factories.{FactoryHealth, IHealthFactory}
+import org.hravemzdy.legalios.interfaces.IPropsHealth
+import org.hravemzdy.legalios.providers.IProviderHealth
+import org.junit.runner.RunWith
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatestplus.junit.JUnitRunner
+
+@RunWith(classOf[JUnitRunner])
+class ProtokolHealthTest extends AnyFunSpec {
+  case class TestIntScenario(minYear: Int, maxYear: Int)
+
+  // 01_Health_01_MinMonthlyBasis
+  describe("GetProps_ShouldExport_MinMonthlyBasis") {
+    List(TestIntScenario(2011, 2022)).foreach(tt => {
+      it("GetProps should export values") {
+        val factory = new FactoryHealth()
+
+        ProtokolBaseTest.ExportPropsIntFile[IProviderHealth, IPropsHealth]("01_Health_01_MinMonthlyBasis.txt",
+          tt.minYear, tt.maxYear, factory,
+          prop => prop.minMonthlyBasis)
+      }
+    })
+  }
+
+  // 01_Health_02_MaxAnnualsBasis
+  describe("GetProps_ShouldExport_MaxAnnualsBasis") {
+    List(TestIntScenario(2011, 2022)).foreach(tt => {
+      it("GetProps should export values") {
+        val factory = new FactoryHealth()
+
+        ProtokolBaseTest.ExportPropsIntFile[IProviderHealth, IPropsHealth]("01_Health_02_MaxAnnualsBasis.txt",
+          tt.minYear, tt.maxYear, factory,
+          prop => prop.maxAnnualsBasis)
+      }
+    })
+  }
+
+  // 01_Health_03_LimMonthlyState
+  describe("GetProps_ShouldExport_LimMonthlyState") {
+    List(TestIntScenario(2011, 2022)).foreach(tt => {
+      it("GetProps should export values") {
+        val factory = new FactoryHealth()
+
+        ProtokolBaseTest.ExportPropsIntFile[IProviderHealth, IPropsHealth]("01_Health_03_LimMonthlyState.txt",
+          tt.minYear, tt.maxYear, factory,
+          prop => prop.limMonthlyState)
+      }
+    })
+  }
+
+  // 01_Health_04_LimMonthlyDis50
+  describe("GetProps_ShouldExport_LimMonthlyDis50") {
+    List(TestIntScenario(2011, 2022)).foreach(tt => {
+      it("GetProps should export values") {
+        val factory = new FactoryHealth()
+
+        ProtokolBaseTest.ExportPropsIntFile[IProviderHealth, IPropsHealth]("01_Health_04_LimMonthlyDis50.txt",
+          tt.minYear, tt.maxYear, factory,
+          prop => prop.limMonthlyDis50)
+      }
+    })
+  }
+
+  // 01_Health_05_FactorCompound
+  describe("GetProps_ShouldExport_FactorCompound") {
+    List(TestIntScenario(2011, 2022)).foreach(tt => {
+      it("GetProps should export values") {
+        val factory = new FactoryHealth()
+
+        ProtokolBaseTest.ExportPropsDecFile[IProviderHealth, IPropsHealth]("01_Health_05_FactorCompound.txt",
+          tt.minYear, tt.maxYear, factory,
+          prop => prop.factorCompound)
+      }
+    })
+  }
+
+  // 01_Health_06_FactorEmployee
+  describe("GetProps_ShouldExport_FactorEmployee") {
+    List(TestIntScenario(2011, 2022)).foreach(tt => {
+      it("GetProps should export values") {
+        val factory = new FactoryHealth()
+
+        ProtokolBaseTest.ExportPropsDecFile[IProviderHealth, IPropsHealth]("01_Health_06_FactorEmployee.txt",
+          tt.minYear, tt.maxYear, factory,
+          prop => prop.factorEmployee)
+      }
+    })
+  }
+
+  // 01_Health_07_MarginIncomeEmp
+  describe("GetProps_ShouldExport_MarginIncomeEmp") {
+    List(TestIntScenario(2011, 2022)).foreach(tt => {
+      it("GetProps should export values") {
+        val factory = new FactoryHealth()
+
+        ProtokolBaseTest.ExportPropsIntFile[IProviderHealth, IPropsHealth]("01_Health_07_MarginIncomeEmp.txt",
+          tt.minYear, tt.maxYear, factory,
+          prop => prop.marginIncomeEmp)
+      }
+    })
+  }
+
+  // 01_Health_08_MarginIncomeAgr
+  describe("GetProps_ShouldExport_MarginIncomeAgr") {
+    List(TestIntScenario(2011, 2022)).foreach(tt => {
+      it("GetProps should export values") {
+        val factory = new FactoryHealth()
+
+        ProtokolBaseTest.ExportPropsIntFile[IProviderHealth, IPropsHealth]("01_Health_08_MarginIncomeAgr.txt",
+          tt.minYear, tt.maxYear, factory,
+          prop => prop.marginIncomeAgr)
+      }
+    })
+  }
+}
