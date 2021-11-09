@@ -109,8 +109,8 @@ publishing {
                     }
                 }
                 scm {
-                    connection.set("scm:git:git@github.com:mzdyhrave/payrollsc.git")
-                    developerConnection.set("scm:git:git@github.com:mzdyhrave/payrollsc.git")
+                    connection.set("scm:git:git@github.com:mzdyhrave/legaliosscala.git")
+                    developerConnection.set("scm:git:git@github.com:mzdyhrave/legaliosscala.git")
                     url.set("https://mzdyhrave.github.io/payrolldocs/")
                 }
             }
