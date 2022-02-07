@@ -20,7 +20,7 @@ package org.hravemzdy.legalios.providers.period2011
 //
 // FACTOR_WITHHOLD                  Sazba daně na srážkový příjem
 //
-// FACTOR_SOLITARY                  Sazba daně na solidární zvýšení
+// FACTOR_SOLIDARY                  Sazba daně na solidární zvýšení
 //
 // MIN_AMOUNT_OF_TAXBONUS           Minimální částka pro daňový bonus
 //
@@ -32,7 +32,7 @@ package org.hravemzdy.legalios.providers.period2011
 //
 // MARGIN_INCOME_OF_WITHHOLD        Maximální výše příjmu pro srážkový příjem
 //
-// MARGIN_INCOME_OF_SOLITARY        Minimální výše příjmu pro solidární zvýšení daně
+// MARGIN_INCOME_OF_SOLIDARY        Minimální výše příjmu pro solidární zvýšení daně
 //
 // MARGIN_INCOME_OF_WHT_AGR         hranice příjmu pro srážkovou daň pro zaměstnace v pracovním poměru (nepodepsal prohlášení)
 //
@@ -51,13 +51,13 @@ object HistoryConstTaxing2011 {
   val ALLOWANCE_CHILD_3RD:Int = 967
   val FACTOR_ADVANCES:BigDecimal = BigDecimal("15")
   val FACTOR_WITHHOLD:BigDecimal = BigDecimal("15")
-  val FACTOR_SOLITARY:BigDecimal = BigDecimal.valueOf(0)
+  val FACTOR_SOLIDARY:BigDecimal = BigDecimal.valueOf(0)
   val MIN_AMOUNT_OF_TAXBONUS:Int = 50
   val MAX_AMOUNT_OF_TAXBONUS:Int = 4350
   val MARGIN_INCOME_OF_TAXBONUS:Int = (HistoryConstSalary2011.MIN_MONTHLY_WAGE / 2)
   val MARGIN_INCOME_OF_ROUNDING:Int = 100
   val MARGIN_INCOME_OF_WITHHOLD:Int = 5000
-  val MARGIN_INCOME_OF_SOLITARY:Int = 0
+  val MARGIN_INCOME_OF_SOLIDARY:Int = 0
   val MARGIN_INCOME_OF_WHT_EMP:Int = 0
   val MARGIN_INCOME_OF_WHT_AGR:Int = 0
 }

@@ -23,7 +23,7 @@ import org.hravemzdy.legalios.providers.period2019.HistoryConstTaxing2019var05
 //
 // FACTOR_WITHHOLD                  Sazba daně na srážkový příjem
 //
-// FACTOR_SOLITARY                  Sazba daně na solidární zvýšení
+// FACTOR_SOLIDARY                  Sazba daně na solidární zvýšení
 //
 // MIN_AMOUNT_OF_TAXBONUS           Minimální částka pro daňový bonus
 //
@@ -35,7 +35,7 @@ import org.hravemzdy.legalios.providers.period2019.HistoryConstTaxing2019var05
 //
 // MARGIN_INCOME_OF_WITHHOLD        Maximální výše příjmu pro srážkový příjem
 //
-// MARGIN_INCOME_OF_SOLITARY        Minimální výše příjmu pro solidární zvýšení daně
+// MARGIN_INCOME_OF_SOLIDARY        Minimální výše příjmu pro solidární zvýšení daně
 //
 // MARGIN_INCOME_OF_WHT_AGR         hranice příjmu pro srážkovou daň pro zaměstnace v pracovním poměru (nepodepsal prohlášení)
 //
@@ -54,13 +54,13 @@ object HistoryConstTaxing2020 {
     val ALLOWANCE_CHILD_3RD:Int = HistoryConstTaxing2019.ALLOWANCE_CHILD_3RD
     val FACTOR_ADVANCES:BigDecimal = HistoryConstTaxing2019.FACTOR_ADVANCES
     val FACTOR_WITHHOLD:BigDecimal = HistoryConstTaxing2019.FACTOR_WITHHOLD
-    val FACTOR_SOLITARY:BigDecimal = HistoryConstTaxing2019.FACTOR_SOLITARY
+    val FACTOR_SOLIDARY:BigDecimal = HistoryConstTaxing2019.FACTOR_SOLIDARY
     val MIN_AMOUNT_OF_TAXBONUS:Int = HistoryConstTaxing2019.MIN_AMOUNT_OF_TAXBONUS
     val MAX_AMOUNT_OF_TAXBONUS:Int = HistoryConstTaxing2019.MAX_AMOUNT_OF_TAXBONUS
     val MARGIN_INCOME_OF_TAXBONUS:Int = (HistoryConstSalary2020.MIN_MONTHLY_WAGE / 2)
     val MARGIN_INCOME_OF_ROUNDING:Int = HistoryConstTaxing2019.MARGIN_INCOME_OF_ROUNDING
     val MARGIN_INCOME_OF_WITHHOLD:Int = HistoryConstTaxing2019.MARGIN_INCOME_OF_WITHHOLD
-    val MARGIN_INCOME_OF_SOLITARY:Int = (4 * 34835)
+    val MARGIN_INCOME_OF_SOLIDARY:Int = (4 * 34835)
     val MARGIN_INCOME_OF_WHT_EMP:Int = HistoryConstTaxing2019var05.MARGIN_INCOME_OF_WHT_EMP
     val MARGIN_INCOME_OF_WHT_AGR:Int = HistoryConstTaxing2019.MARGIN_INCOME_OF_WHT_AGR
 }

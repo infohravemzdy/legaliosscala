@@ -22,7 +22,7 @@ import org.hravemzdy.legalios.providers.period2013.HistoryConstTaxing2013
 //
 // FACTOR_WITHHOLD                  Sazba daně na srážkový příjem
 //
-// FACTOR_SOLITARY                  Sazba daně na solidární zvýšení
+// FACTOR_SOLIDARY                  Sazba daně na solidární zvýšení
 //
 // MIN_AMOUNT_OF_TAXBONUS           Minimální částka pro daňový bonus
 //
@@ -34,7 +34,7 @@ import org.hravemzdy.legalios.providers.period2013.HistoryConstTaxing2013
 //
 // MARGIN_INCOME_OF_WITHHOLD        Maximální výše příjmu pro srážkový příjem
 //
-// MARGIN_INCOME_OF_SOLITARY        Minimální výše příjmu pro solidární zvýšení daně
+// MARGIN_INCOME_OF_SOLIDARY        Minimální výše příjmu pro solidární zvýšení daně
 //
 // MARGIN_INCOME_OF_WHT_AGR         hranice příjmu pro srážkovou daň pro zaměstnace v pracovním poměru (nepodepsal prohlášení)
 //
@@ -53,13 +53,13 @@ object HistoryConstTaxing2014 {
     val ALLOWANCE_CHILD_3RD:Int = HistoryConstTaxing2013.ALLOWANCE_CHILD_3RD
     val FACTOR_ADVANCES:BigDecimal = HistoryConstTaxing2013.FACTOR_ADVANCES
     val FACTOR_WITHHOLD:BigDecimal = HistoryConstTaxing2013.FACTOR_WITHHOLD
-    val FACTOR_SOLITARY:BigDecimal = HistoryConstTaxing2013.FACTOR_SOLITARY
+    val FACTOR_SOLIDARY:BigDecimal = HistoryConstTaxing2013.FACTOR_SOLIDARY
     val MIN_AMOUNT_OF_TAXBONUS:Int = HistoryConstTaxing2013.MIN_AMOUNT_OF_TAXBONUS
     val MAX_AMOUNT_OF_TAXBONUS:Int = HistoryConstTaxing2013.MAX_AMOUNT_OF_TAXBONUS
     val MARGIN_INCOME_OF_TAXBONUS:Int = (HistoryConstSalary2014.MIN_MONTHLY_WAGE / 2)
     val MARGIN_INCOME_OF_ROUNDING:Int = HistoryConstTaxing2013.MARGIN_INCOME_OF_ROUNDING
     val MARGIN_INCOME_OF_WITHHOLD:Int = 0
-    val MARGIN_INCOME_OF_SOLITARY:Int = (4 * 25942)
+    val MARGIN_INCOME_OF_SOLIDARY:Int = (4 * 25942)
     val MARGIN_INCOME_OF_WHT_EMP:Int = HistoryConstTaxing2013.MARGIN_INCOME_OF_WHT_EMP
     val MARGIN_INCOME_OF_WHT_AGR:Int = 10000
 }
