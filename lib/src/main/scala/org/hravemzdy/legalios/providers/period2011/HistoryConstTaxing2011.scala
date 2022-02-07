@@ -1,5 +1,7 @@
 package org.hravemzdy.legalios.providers.period2011
 
+import org.hravemzdy.legalios.providers.period2010.HistoryConstTaxing2010
+
 // ALLOWANCE_PAYER                  Částka slevy na poplatníka
 //
 // ALLOWANCE_DISAB_1ST              Částka slevy na invaliditu 1.stupně poplatníka
@@ -22,6 +24,8 @@ package org.hravemzdy.legalios.providers.period2011
 //
 // FACTOR_SOLIDARY                  Sazba daně na solidární zvýšení
 //
+// FACTOR_TAXRATE2                  Sazba daně na druhé pásmo daně
+//
 // MIN_AMOUNT_OF_TAXBONUS           Minimální částka pro daňový bonus
 //
 // MAX_AMOUNT_OF_TAXBONUS           Maximální částka pro daňový bonus
@@ -34,6 +38,8 @@ package org.hravemzdy.legalios.providers.period2011
 //
 // MARGIN_INCOME_OF_SOLIDARY        Minimální výše příjmu pro solidární zvýšení daně
 //
+// MARGIN_INCOME_OF_TAXRATE2        Minimální výše příjmu pro druhé pásmo daně
+//
 // MARGIN_INCOME_OF_WHT_AGR         hranice příjmu pro srážkovou daň pro zaměstnace v pracovním poměru (nepodepsal prohlášení)
 //
 // MARGIN_INCOME_OF_WHT_EMP         hranice příjmu pro srážkovou daň pro zaměstnace na dohodu (nepodepsal prohlášení)
@@ -42,22 +48,24 @@ object HistoryConstTaxing2011 {
   val VERSION_CODE:Int = 2011
 
   val ALLOWANCE_PAYER:Int = 1970
-  val ALLOWANCE_DISAB_1ST:Int = 210
-  val ALLOWANCE_DISAB_2ND:Int = 420
-  val ALLOWANCE_DISAB_3RD:Int = 1345
-  val ALLOWANCE_STUDY:Int = 335
-  val ALLOWANCE_CHILD_1ST:Int = 967
-  val ALLOWANCE_CHILD_2ND:Int = 967
-  val ALLOWANCE_CHILD_3RD:Int = 967
-  val FACTOR_ADVANCES:BigDecimal = BigDecimal("15")
-  val FACTOR_WITHHOLD:BigDecimal = BigDecimal("15")
-  val FACTOR_SOLIDARY:BigDecimal = BigDecimal.valueOf(0)
-  val MIN_AMOUNT_OF_TAXBONUS:Int = 50
-  val MAX_AMOUNT_OF_TAXBONUS:Int = 4350
+  val ALLOWANCE_DISAB_1ST:Int = HistoryConstTaxing2010.ALLOWANCE_DISAB_1ST
+  val ALLOWANCE_DISAB_2ND:Int = HistoryConstTaxing2010.ALLOWANCE_DISAB_2ND
+  val ALLOWANCE_DISAB_3RD:Int = HistoryConstTaxing2010.ALLOWANCE_DISAB_3RD
+  val ALLOWANCE_STUDY:Int = HistoryConstTaxing2010.ALLOWANCE_STUDY
+  val ALLOWANCE_CHILD_1ST:Int = HistoryConstTaxing2010.ALLOWANCE_CHILD_1ST
+  val ALLOWANCE_CHILD_2ND:Int = HistoryConstTaxing2010.ALLOWANCE_CHILD_2ND
+  val ALLOWANCE_CHILD_3RD:Int = HistoryConstTaxing2010.ALLOWANCE_CHILD_3RD
+  val FACTOR_ADVANCES:BigDecimal = HistoryConstTaxing2010.FACTOR_ADVANCES
+  val FACTOR_WITHHOLD:BigDecimal = HistoryConstTaxing2010.FACTOR_WITHHOLD
+  val FACTOR_SOLIDARY:BigDecimal = HistoryConstTaxing2010.FACTOR_SOLIDARY
+  val FACTOR_TAXRATE2:BigDecimal = HistoryConstTaxing2010.FACTOR_TAXRATE2
+  val MIN_AMOUNT_OF_TAXBONUS:Int = HistoryConstTaxing2010.MIN_AMOUNT_OF_TAXBONUS
+  val MAX_AMOUNT_OF_TAXBONUS:Int = HistoryConstTaxing2010.MAX_AMOUNT_OF_TAXBONUS
   val MARGIN_INCOME_OF_TAXBONUS:Int = (HistoryConstSalary2011.MIN_MONTHLY_WAGE / 2)
-  val MARGIN_INCOME_OF_ROUNDING:Int = 100
-  val MARGIN_INCOME_OF_WITHHOLD:Int = 5000
-  val MARGIN_INCOME_OF_SOLIDARY:Int = 0
-  val MARGIN_INCOME_OF_WHT_EMP:Int = 0
-  val MARGIN_INCOME_OF_WHT_AGR:Int = 0
+  val MARGIN_INCOME_OF_ROUNDING:Int = HistoryConstTaxing2010.MARGIN_INCOME_OF_ROUNDING
+  val MARGIN_INCOME_OF_WITHHOLD:Int = HistoryConstTaxing2010.MARGIN_INCOME_OF_WITHHOLD
+  val MARGIN_INCOME_OF_SOLIDARY:Int = HistoryConstTaxing2010.MARGIN_INCOME_OF_SOLIDARY
+  val MARGIN_INCOME_OF_TAXRATE2:Int = HistoryConstTaxing2010.MARGIN_INCOME_OF_TAXRATE2
+  val MARGIN_INCOME_OF_WHT_EMP:Int = HistoryConstTaxing2010.MARGIN_INCOME_OF_WHT_EMP
+  val MARGIN_INCOME_OF_WHT_AGR:Int = HistoryConstTaxing2010.MARGIN_INCOME_OF_WHT_AGR
 }

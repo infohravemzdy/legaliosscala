@@ -1,5 +1,7 @@
 package org.hravemzdy.legalios.providers.period2011
 
+import org.hravemzdy.legalios.providers.period2010.HistoryConstSocial2010
+
 // MAX_ANNUALS_BASIS            Maximální roční vyměřovací základ na jednoho pracovníka (tzv.strop)
 //
 // FACTOR_EMPLOYER              Sazba - standardní sociálního pojištění - zaměstnavatele
@@ -20,11 +22,11 @@ object HistoryConstSocial2011 {
   val VERSION_CODE:Int = 2011
 
   val MAX_ANNUALS_BASIS:Int = 1781280
-  val FACTOR_EMPLOYER: BigDecimal = BigDecimal("25")
+  val FACTOR_EMPLOYER: BigDecimal = HistoryConstSocial2010.FACTOR_EMPLOYER
   val FACTOR_EMPLOYER_HIGHER:BigDecimal = BigDecimal("26")
-  val FACTOR_EMPLOYEE:BigDecimal = BigDecimal("6.5")
-  val FACTOR_EMPLOYEE_REDUCE:BigDecimal = BigDecimal.valueOf(0)
-  val FACTOR_EMPLOYEE_GARANT:BigDecimal = BigDecimal.valueOf(0)
-  val MARGIN_INCOME_EMP:Int = 2000
-  val MARGIN_INCOME_AGR:Int = MARGIN_INCOME_EMP
+  val FACTOR_EMPLOYEE:BigDecimal = HistoryConstSocial2010.FACTOR_EMPLOYEE
+  val FACTOR_EMPLOYEE_REDUCE:BigDecimal = HistoryConstSocial2010.FACTOR_EMPLOYEE_REDUCE
+  val FACTOR_EMPLOYEE_GARANT:BigDecimal = HistoryConstSocial2010.FACTOR_EMPLOYEE_GARANT
+  val MARGIN_INCOME_EMP:Int = HistoryConstSocial2010.MARGIN_INCOME_EMP
+  val MARGIN_INCOME_AGR:Int = HistoryConstSocial2010.MARGIN_INCOME_AGR
 }

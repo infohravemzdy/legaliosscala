@@ -1,5 +1,6 @@
 package org.hravemzdy.legalios.service
 
+import org.hravemzdy.legalios.{TestIntParams, TestIntScenario}
 import org.hravemzdy.legalios.interfaces.{IBundleProps, IPropsHealth}
 import org.hravemzdy.legalios.service.errors.HistoryResultError
 import org.hravemzdy.legalios.service.types.Period
@@ -10,6 +11,20 @@ import org.scalatestplus.junit.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class Service_Legalios_Example_01_Health_01_MinMonthlyBasisTest extends AnyFunSpec {
   val testList = List(
+    TestIntScenario("2010", List(
+      TestIntParams( "2010-1", 2010, 1, 2010, 1, 8000 ),
+      TestIntParams( "2010-2", 2010, 2, 2010, 2, 8000 ),
+      TestIntParams( "2010-3", 2010, 3, 2010, 3, 8000 ),
+      TestIntParams( "2010-4", 2010, 4, 2010, 4, 8000 ),
+      TestIntParams( "2010-5", 2010, 5, 2010, 5, 8000 ),
+      TestIntParams( "2010-6", 2010, 6, 2010, 6, 8000 ),
+      TestIntParams( "2010-7", 2010, 7, 2010, 7, 8000 ),
+      TestIntParams( "2010-8", 2010, 8, 2010, 8, 8000 ),
+      TestIntParams( "2010-9", 2010, 9, 2010, 9, 8000 ),
+      TestIntParams( "2010-10", 2010, 10, 2010, 10, 8000 ),
+      TestIntParams( "2010-11", 2010, 11, 2010, 11, 8000 ),
+      TestIntParams( "2010-12", 2010, 12, 2010, 12, 8000 ),
+    )),
     TestIntScenario("2011", List(
       TestIntParams( "2011-1", 2011, 1, 2011, 1, 8000 ),
       TestIntParams( "2011-2", 2011, 2, 2011, 2, 8000 ),
@@ -165,18 +180,18 @@ class Service_Legalios_Example_01_Health_01_MinMonthlyBasisTest extends AnyFunSp
       TestIntParams( "2021-12", 2021, 12, 2021, 12, 15200 ),
     )),
     TestIntScenario("2022", List(
-      TestIntParams( "2022-1",  2022,  1, 2022,  1,15200 ),
-      TestIntParams( "2022-2",  2022,  2, 2022,  2,15200 ),
-      TestIntParams( "2022-3",  2022,  3, 2022,  3,15200 ),
-      TestIntParams( "2022-4",  2022,  4, 2022,  4,15200 ),
-      TestIntParams( "2022-5",  2022,  5, 2022,  5,15200 ),
-      TestIntParams( "2022-6",  2022,  6, 2022,  6,15200 ),
-      TestIntParams( "2022-7",  2022,  7, 2022,  7,15200 ),
-      TestIntParams( "2022-8",  2022,  8, 2022,  8,15200 ),
-      TestIntParams( "2022-9",  2022,  9, 2022,  9,15200 ),
-      TestIntParams( "2022-10", 2022, 10, 2022, 10, 15200 ),
-      TestIntParams( "2022-11", 2022, 11, 2022, 11, 15200 ),
-      TestIntParams( "2022-12", 2022, 12, 2022, 12, 15200 ),
+      TestIntParams( "2022-1",  2022,  1, 2022,  1,16200 ),
+      TestIntParams( "2022-2",  2022,  2, 2022,  2,16200 ),
+      TestIntParams( "2022-3",  2022,  3, 2022,  3,16200 ),
+      TestIntParams( "2022-4",  2022,  4, 2022,  4,16200 ),
+      TestIntParams( "2022-5",  2022,  5, 2022,  5,16200 ),
+      TestIntParams( "2022-6",  2022,  6, 2022,  6,16200 ),
+      TestIntParams( "2022-7",  2022,  7, 2022,  7,16200 ),
+      TestIntParams( "2022-8",  2022,  8, 2022,  8,16200 ),
+      TestIntParams( "2022-9",  2022,  9, 2022,  9,16200 ),
+      TestIntParams( "2022-10", 2022, 10, 2022, 10, 16200 ),
+      TestIntParams( "2022-11", 2022, 11, 2022, 11, 16200 ),
+      TestIntParams( "2022-12", 2022, 12, 2022, 12, 16200 ),
     )),
   )
 
@@ -184,10 +199,10 @@ class Service_Legalios_Example_01_Health_01_MinMonthlyBasisTest extends AnyFunSp
   ServiceExampleBase.logTestIntExamples("01_Health_01_MinMonthlyBasis.txt", testList)
 
   testList.foreach { tx =>
-    describe(s"year ${tx.title}") {
+    describe(s"year ${tx.testTitle}") {
       tx.tests.foreach { tt =>
-        describe(s"period ${tt.title}") {
-          val period = Period.getWithYearMonth(tt.year, tt.month)
+        describe(s"period ${tt.testName}") {
+          val period = Period.getWithYearMonth(tt.testYear, tt.testMonth)
           val service = new ServiceLegalios()
           val result: Either[HistoryResultError, IBundleProps] = service.getBundle(period)
           val bundle: IBundleProps = result match {
@@ -211,15 +226,15 @@ class Service_Legalios_Example_01_Health_01_MinMonthlyBasisTest extends AnyFunSp
           it("GetProps should return props not be nil") {
             assert(bundle != null)
           }
-          it(s"GetProps should return getPeriodYear = ${tt.expYear} and getPeriodMonth = ${tt.expMonth}") {
-            assert(tt.expYear == bundle.getPeriodYear())
-            assert(tt.expMonth == bundle.getPeriodMonth())
+          it(s"GetProps should return getPeriodYear = ${tt.resultYear} and getPeriodMonth = ${tt.resultMonth}") {
+            assert(tt.resultYear == bundle.getPeriodYear())
+            assert(tt.resultMonth == bundle.getPeriodMonth())
           }
           it("GetProps should return healthProps not to be nil") {
             assert(props != null)
           }
-          it(s"GetProps should return value = ${tt.expected}") {
-            assert(tt.expected == props.minMonthlyBasis)
+          it(s"GetProps should return value = ${tt.resultValue}") {
+            assert(tt.resultValue == props.minMonthlyBasis)
           }
         }
       }

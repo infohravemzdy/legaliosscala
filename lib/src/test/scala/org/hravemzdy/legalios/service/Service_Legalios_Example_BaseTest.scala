@@ -1,61 +1,15 @@
 package org.hravemzdy.legalios.service
 
+import org.hravemzdy.legalios.{TestDecScenario, TestIntScenario}
 import org.hravemzdy.legalios.interfaces.{IBundleProps, IProps}
 import org.hravemzdy.legalios.service.errors.HistoryResultError
 import org.scalatest.funspec.AnyFunSpec
+
 import java.io.{File, FileWriter}
 import java.nio.file.Paths
 
-case class TestDecParams(title: String, year: Int, month: Int, expYear: Int, expMonth: Int, expected: Double) {
-  def testBasicResult(test: AnyFunSpec, result: Either[HistoryResultError, IBundleProps], bundle: IBundleProps, props: IProps, error: HistoryResultError) : Unit = {
-//    test.it("GetProps should return error = null") {
-//      assertTrue(error == null)
-//    }
-//    test.it("GetProps should return result = success") {
-//      assertTrue(result is Ok<IBundleProps>)
-//    }
-//    test.it("GetProps should return props not be nil") {
-//      assertNotNull(bundle == null)
-//    }
-//    test.it("GetProps should return getPeriodYear = ${expYear} and getPeriodMonth = ${expMonth}") {
-//      assertEquals(expYear, bundle?.getPeriodYear())
-//      assertEquals(expMonth, bundle?.getPeriodMonth())
-//    }
-//    test.it("GetProps should return healthProps not to be nil") {
-//      assertNotNull(props)
-//    }
-  }
-  def expectedDec(): BigDecimal = {
-    val intValue: Int = Math.round(expected*100).toInt
-    return BigDecimal(intValue) / (BigDecimal(100))
-  }
-}
-case class TestDecScenario(title: String, tests: List[TestDecParams])
-
-case class TestIntParams(title: String, year: Int, month: Int, expYear: Int, expMonth: Int, expected: Int) {
-  def testBasicResult(test: AnyFunSpec, result: Either[HistoryResultError, IBundleProps], bundle: IBundleProps, props: IProps, error: HistoryResultError) : Unit = {
-    //    test.it("GetProps should return error = null") {
-    //      assertTrue(error == null)
-    //    }
-    //    test.it("GetProps should return result = success") {
-    //      assertTrue(result is Ok<IBundleProps>)
-    //    }
-    //    test.it("GetProps should return props not be nil") {
-    //      assertNotNull(bundle == null)
-    //    }
-    //    test.it("GetProps should return getPeriodYear = ${expYear} and getPeriodMonth = ${expMonth}") {
-    //      assertEquals(expYear, bundle?.getPeriodYear())
-    //      assertEquals(expMonth, bundle?.getPeriodMonth())
-    //    }
-    //    test.it("GetProps should return healthProps not to be nil") {
-    //      assertNotNull(props)
-    //    }
-  }
-}
-case class TestIntScenario(title: String, tests: List[TestIntParams])
-
 object ServiceExampleBase {
-  val __test_protokol_file__ = false
+  val __test_protokol_file__ = true
 
   val EXAMPLE_FOLDER_PATH = "../../../test_expected"
   val EXAMPLE_FOLDER_NAME = "test_expected"
@@ -105,9 +59,9 @@ object ServiceExampleBase {
       try {
         logTestStart(testLogger)
         tests.foreach { tx =>
-          logTestYear(testLogger, tx.title)
+          logTestYear(testLogger, tx.testTitle)
           tx.tests.foreach { tt =>
-            logExampleIntValue(testLogger, tt.expected)
+            logExampleIntValue(testLogger, tt.resultValue)
           }
           logTestEnd(testLogger)
         }
@@ -117,8 +71,9 @@ object ServiceExampleBase {
     }
   }
 
-  def logExampleDecValue(protokol: FileWriter, value: Double): Unit = {
-    protokol.write(s"\t$value")
+  def logExampleDecValue(protokol: FileWriter, value: BigDecimal): Unit = {
+    val intValue: Int = (value*100).toInt
+    protokol.write(s"\t$intValue")
   }
 
   def logTestDecExamples(fileName : String, tests: List[TestDecScenario]): Unit = {
@@ -128,9 +83,9 @@ object ServiceExampleBase {
       try {
         logTestStart(testLogger)
         tests.foreach { tx =>
-          logTestYear(testLogger, tx.title)
+          logTestYear(testLogger, tx.testTitle)
           tx.tests.foreach { tt =>
-            logExampleDecValue(testLogger, tt.expected)
+            logExampleDecValue(testLogger, tt.resultValue)
           }
           logTestEnd(testLogger)
         }

@@ -1,12 +1,12 @@
 package org.hravemzdy.legalios.providers.period2011
 
 import org.hravemzdy.legalios.interfaces.{IPeriod, IPropsSocial}
-import org.hravemzdy.legalios.props.PropsSocial
+import org.hravemzdy.legalios.props.{PropsSocial, PropsSocial2010}
 import org.hravemzdy.legalios.providers.{IProviderSocial, ProviderBase}
 
 class ProviderSocial2011 extends ProviderBase(HistoryConstSocial2011.VERSION_CODE) with IProviderSocial {
   override def getProps(period: IPeriod): IPropsSocial = {
-    return new PropsSocial(
+    return new PropsSocial2010(
       version,
       maxAnnualsBasis(period),
       factorEmployer(period),

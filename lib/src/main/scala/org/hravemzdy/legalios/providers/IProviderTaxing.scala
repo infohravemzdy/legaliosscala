@@ -14,12 +14,14 @@ trait IProviderTaxing extends IPropsProvider[IPropsTaxing] {
   def factorAdvances(period: IPeriod): BigDecimal
   def factorWithhold(period: IPeriod): BigDecimal
   def factorSolidary(period: IPeriod): BigDecimal
+  def factorTaxRate2(period: IPeriod): BigDecimal
   def minAmountOfTaxBonus(period: IPeriod): Int
   def maxAmountOfTaxBonus(period: IPeriod): Int
   def marginIncomeOfTaxBonus(period: IPeriod): Int
   def marginIncomeOfRounding(period: IPeriod): Int
   def marginIncomeOfWithhold(period: IPeriod): Int
   def marginIncomeOfSolidary(period: IPeriod): Int
+  def marginIncomeOfTaxRate2(period: IPeriod): Int
   def marginIncomeOfWthEmp(period: IPeriod): Int
   def marginIncomeOfWthAgr(period: IPeriod): Int
 }

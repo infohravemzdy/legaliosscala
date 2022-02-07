@@ -8,7 +8,7 @@ import java.io.{File, FileWriter}
 import java.nio.file.Paths
 
 object ProtokolBaseTest {
-  val __test_protokol_file__ = false
+  val __test_protokol_file__ = true
 
   val PROTOKOL_FOLDER_PATH = "../../../test_values"
   val PROTOKOL_FOLDER_NAME = "test_values"

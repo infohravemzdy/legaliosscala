@@ -1,5 +1,6 @@
 package org.hravemzdy.legalios.service
 
+import org.hravemzdy.legalios.{TestIntParams, TestIntScenario}
 import org.hravemzdy.legalios.interfaces.{IBundleProps, IPropsTaxing}
 import org.hravemzdy.legalios.service.errors.HistoryResultError
 import org.hravemzdy.legalios.service.types.Period
@@ -10,6 +11,20 @@ import org.scalatestplus.junit.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class Service_Legalios_Example_04_Taxing_02_AllowanceDisab1stTest extends AnyFunSpec {
   val testList = List(
+    TestIntScenario("2010", List(
+      TestIntParams( "2010-1", 2010, 1, 2010, 1, 210 ),
+      TestIntParams( "2010-2", 2010, 2, 2010, 2, 210 ),
+      TestIntParams( "2010-3", 2010, 3, 2010, 3, 210 ),
+      TestIntParams( "2010-4", 2010, 4, 2010, 4, 210 ),
+      TestIntParams( "2010-5", 2010, 5, 2010, 5, 210 ),
+      TestIntParams( "2010-6", 2010, 6, 2010, 6, 210 ),
+      TestIntParams( "2010-7", 2010, 7, 2010, 7, 210 ),
+      TestIntParams( "2010-8", 2010, 8, 2010, 8, 210 ),
+      TestIntParams( "2010-9", 2010, 9, 2010, 9, 210 ),
+      TestIntParams( "2010-10", 2010, 10, 2010, 10, 210 ),
+      TestIntParams( "2010-11", 2010, 11, 2010, 11, 210 ),
+      TestIntParams( "2010-12", 2010, 12, 2010, 12, 210 ),
+    )),
     TestIntScenario("2011", List(
       TestIntParams( "2011-1", 2011, 1, 2011, 1, 210 ),
       TestIntParams( "2011-2", 2011, 2, 2011, 2, 210 ),
@@ -182,10 +197,10 @@ class Service_Legalios_Example_04_Taxing_02_AllowanceDisab1stTest extends AnyFun
   // 04_Taxing_02_AllowanceDisab1st
   ServiceExampleBase.logTestIntExamples("04_Taxing_02_AllowanceDisab1st.txt", testList)
   testList.foreach { tx =>
-    describe(s"year ${tx.title}") {
+    describe(s"year ${tx.testTitle}") {
       tx.tests.foreach { tt =>
-        describe(s"period ${tt.title}") {
-          val period = Period.getWithYearMonth(tt.year, tt.month)
+        describe(s"period ${tt.testName}") {
+          val period = Period.getWithYearMonth(tt.testYear, tt.testMonth)
           val service = new ServiceLegalios()
           val result: Either[HistoryResultError, IBundleProps] = service.getBundle(period)
           val bundle: IBundleProps = result match {
@@ -209,15 +224,15 @@ class Service_Legalios_Example_04_Taxing_02_AllowanceDisab1stTest extends AnyFun
           it("GetProps should return props not be nil") {
             assert(bundle != null)
           }
-          it(s"GetProps should return getPeriodYear = ${tt.expYear} and getPeriodMonth = ${tt.expMonth}") {
-            assert(tt.expYear == bundle.getPeriodYear())
-            assert(tt.expMonth == bundle.getPeriodMonth())
+          it(s"GetProps should return getPeriodYear = ${tt.resultYear} and getPeriodMonth = ${tt.resultMonth}") {
+            assert(tt.resultYear == bundle.getPeriodYear())
+            assert(tt.resultMonth == bundle.getPeriodMonth())
           }
           it("GetProps should return healthProps not to be nil") {
             assert(props != null)
           }
-          it(s"GetProps should return value = ${tt.expected}") {
-            assert(tt.expected == props.allowanceDisab1st)
+          it(s"GetProps should return value = ${tt.resultValue}") {
+            assert(tt.resultValue == props.allowanceDisab1st)
           }
         }
       }

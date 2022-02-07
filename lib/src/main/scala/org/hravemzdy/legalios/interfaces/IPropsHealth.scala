@@ -1,5 +1,7 @@
 package org.hravemzdy.legalios.interfaces
 
+import org.hravemzdy.legalios.service.types.WorkHealthTerms.WorkHealthTerms
+
 trait IPropsHealth extends IProps {
   val minMonthlyBasis: Int
   val maxAnnualsBasis: Int
@@ -9,4 +11,13 @@ trait IPropsHealth extends IProps {
   val factorEmployee: BigDecimal
   val marginIncomeEmp: Int
   val marginIncomeAgr: Int
+
+  def valueEquals(other: Option[IPropsHealth]): Boolean
+  def hasParticy(term: WorkHealthTerms, incomeTerm: Int, incomeSpec: Int): Boolean
+  def roundedCompoundPaym(basisResult: Int): Int
+  def roundedEmployeePaym(basisResult: Int): Int
+  def roundedAugmentEmployeePaym(basisGenerals: Int, basisAugment: Int): Int
+  def roundedAugmentEmployerPaym(basisGenerals: Int, baseEmployee: Int, baseEmployer: Int): Int
+  def roundedEmployerPaym(basisResult: Int): Int
+  def annualsBasisCut[T <: IParticyResult](particyList: Iterable[T], incomeList: Iterable[T], annuityBasis: Int): (Int, Int, Iterable[T])
 }

@@ -9,11 +9,11 @@ import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class ProtokolHealthTest extends AnyFunSpec {
-  case class TestIntScenario(minYear: Int, maxYear: Int)
+  case class TestYearsScenario(minYear: Int, maxYear: Int)
 
   // 01_Health_01_MinMonthlyBasis
   describe("GetProps_ShouldExport_MinMonthlyBasis") {
-    List(TestIntScenario(2011, 2022)).foreach(tt => {
+    List(TestYearsScenario(2010, 2022)).foreach(tt => {
       it("GetProps should export values") {
         val factory = new FactoryHealth()
 
@@ -26,7 +26,7 @@ class ProtokolHealthTest extends AnyFunSpec {
 
   // 01_Health_02_MaxAnnualsBasis
   describe("GetProps_ShouldExport_MaxAnnualsBasis") {
-    List(TestIntScenario(2011, 2022)).foreach(tt => {
+    List(TestYearsScenario(2010, 2022)).foreach(tt => {
       it("GetProps should export values") {
         val factory = new FactoryHealth()
 
@@ -39,7 +39,7 @@ class ProtokolHealthTest extends AnyFunSpec {
 
   // 01_Health_03_LimMonthlyState
   describe("GetProps_ShouldExport_LimMonthlyState") {
-    List(TestIntScenario(2011, 2022)).foreach(tt => {
+    List(TestYearsScenario(2010, 2022)).foreach(tt => {
       it("GetProps should export values") {
         val factory = new FactoryHealth()
 
@@ -52,7 +52,7 @@ class ProtokolHealthTest extends AnyFunSpec {
 
   // 01_Health_04_LimMonthlyDis50
   describe("GetProps_ShouldExport_LimMonthlyDis50") {
-    List(TestIntScenario(2011, 2022)).foreach(tt => {
+    List(TestYearsScenario(2010, 2022)).foreach(tt => {
       it("GetProps should export values") {
         val factory = new FactoryHealth()
 
@@ -65,7 +65,7 @@ class ProtokolHealthTest extends AnyFunSpec {
 
   // 01_Health_05_FactorCompound
   describe("GetProps_ShouldExport_FactorCompound") {
-    List(TestIntScenario(2011, 2022)).foreach(tt => {
+    List(TestYearsScenario(2010, 2022)).foreach(tt => {
       it("GetProps should export values") {
         val factory = new FactoryHealth()
 
@@ -78,7 +78,7 @@ class ProtokolHealthTest extends AnyFunSpec {
 
   // 01_Health_06_FactorEmployee
   describe("GetProps_ShouldExport_FactorEmployee") {
-    List(TestIntScenario(2011, 2022)).foreach(tt => {
+    List(TestYearsScenario(2010, 2022)).foreach(tt => {
       it("GetProps should export values") {
         val factory = new FactoryHealth()
 
@@ -91,7 +91,7 @@ class ProtokolHealthTest extends AnyFunSpec {
 
   // 01_Health_07_MarginIncomeEmp
   describe("GetProps_ShouldExport_MarginIncomeEmp") {
-    List(TestIntScenario(2011, 2022)).foreach(tt => {
+    List(TestYearsScenario(2010, 2022)).foreach(tt => {
       it("GetProps should export values") {
         val factory = new FactoryHealth()
 
@@ -104,7 +104,7 @@ class ProtokolHealthTest extends AnyFunSpec {
 
   // 01_Health_08_MarginIncomeAgr
   describe("GetProps_ShouldExport_MarginIncomeAgr") {
-    List(TestIntScenario(2011, 2022)).foreach(tt => {
+    List(TestYearsScenario(2010, 2022)).foreach(tt => {
       it("GetProps should export values") {
         val factory = new FactoryHealth()
 

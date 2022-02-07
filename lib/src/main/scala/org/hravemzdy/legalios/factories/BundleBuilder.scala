@@ -1,6 +1,7 @@
 package org.hravemzdy.legalios.factories
 
 import org.hravemzdy.legalios.interfaces.{IBundleProps, IPeriod, IProps, IPropsHealth, IPropsSalary, IPropsSocial, IPropsTaxing}
+import org.hravemzdy.legalios.service.types.BundleProps
 
 class BundleBuilder(private val salaryFactory : ISalaryFactory,
                     private val healthFactory : IHealthFactory,
@@ -43,7 +44,7 @@ class BundleBuilder(private val salaryFactory : ISalaryFactory,
 }
 
 object BundleBuilder {
-  private val MIN_VERSION: Int = 2011
+  private val MIN_VERSION: Int = 2010
 
   private def isNullOrEmpty(props: IProps): Boolean = {
     return (props.version.value < MIN_VERSION)

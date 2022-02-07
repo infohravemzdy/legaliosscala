@@ -1,12 +1,12 @@
 package org.hravemzdy.legalios.providers.period2014
 
 import org.hravemzdy.legalios.interfaces.{IPeriod, IPropsHealth}
-import org.hravemzdy.legalios.props.PropsHealth
+import org.hravemzdy.legalios.props.{PropsHealth, PropsHealth2014}
 import org.hravemzdy.legalios.providers.{IProviderHealth, ProviderBase}
 
 class ProviderHealth2014 extends ProviderBase(HistoryConstHealth2014.VERSION_CODE) with IProviderHealth {
   override def getProps(period: IPeriod): IPropsHealth = {
-    return new PropsHealth(
+    return new PropsHealth2014(
       version,
       minMonthlyBasis(period),
       maxAnnualsBasis(period),

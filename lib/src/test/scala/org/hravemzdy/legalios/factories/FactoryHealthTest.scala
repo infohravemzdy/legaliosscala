@@ -1,5 +1,6 @@
 package org.hravemzdy.legalios.factories
 
+import org.hravemzdy.legalios.{TestParams, TestScenario}
 import org.hravemzdy.legalios.interfaces.IPropsHealth
 import org.hravemzdy.legalios.service.types.Period
 import org.junit.runner.RunWith
@@ -8,24 +9,36 @@ import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class FactoryHealthTest extends AnyFunSpec {
-    case class TestParams(title: String, year: Int, month: Int, expected: Int)
-    case class TestScenario(title: String, tests: List[TestParams])
 
     describe("TestFactoryHealth_ForYear2011_2021") {
         List(
+            TestScenario("2009", List(
+                TestParams("2009- 1", 2009, 1, 0),
+                TestParams("2009- 2", 2009, 2, 0),
+                TestParams("2009- 3", 2009, 3, 0),
+                TestParams("2009- 4", 2009, 4, 0),
+                TestParams("2009- 5", 2009, 5, 0),
+                TestParams("2009- 6", 2009, 6, 0),
+                TestParams("2009- 7", 2009, 7, 0),
+                TestParams("2009- 8", 2009, 8, 0),
+                TestParams("2009- 9", 2009, 9, 0),
+                TestParams("2009-10", 2009,10, 0),
+                TestParams("2009-11", 2009,11, 0),
+                TestParams("2009-12", 2009,12, 0),
+            )),
             TestScenario("2010", List(
-                TestParams("2010- 1", 2010, 1, 0),
-                TestParams("2010- 2", 2010, 2, 0),
-                TestParams("2010- 3", 2010, 3, 0),
-                TestParams("2010- 4", 2010, 4, 0),
-                TestParams("2010- 5", 2010, 5, 0),
-                TestParams("2010- 6", 2010, 6, 0),
-                TestParams("2010- 7", 2010, 7, 0),
-                TestParams("2010- 8", 2010, 8, 0),
-                TestParams("2010- 9", 2010, 9, 0),
-                TestParams("2010-10", 2010,10, 0),
-                TestParams("2010-11", 2010,11, 0),
-                TestParams("2010-12", 2010,12, 0),
+                TestParams("2010- 1", 2010, 1, 2010),
+                TestParams("2010- 2", 2010, 2, 2010),
+                TestParams("2010- 3", 2010, 3, 2010),
+                TestParams("2010- 4", 2010, 4, 2010),
+                TestParams("2010- 5", 2010, 5, 2010),
+                TestParams("2010- 6", 2010, 6, 2010),
+                TestParams("2010- 7", 2010, 7, 2010),
+                TestParams("2010- 8", 2010, 8, 2010),
+                TestParams("2010- 9", 2010, 9, 2010),
+                TestParams("2010-10", 2010,10, 2010),
+                TestParams("2010-11", 2010,11, 2010),
+                TestParams("2010-12", 2010,12, 2010),
             )),
             TestScenario("2011", List(
                 TestParams("2011- 1", 2011, 1, 2011),
@@ -196,10 +209,10 @@ class FactoryHealthTest extends AnyFunSpec {
                 TestParams("2022-12", 2022,12, 2022),
             )),
         ).foreach(tx => {
-            describe(s"year ${tx.title}") {
+            describe(s"year ${tx.testTitle}") {
                 tx.tests.foreach(tt => {
-                    describe(s"getting props from factory for period ${tt.title}") {
-                        val period = Period.getWithYearMonth(tt.year, tt.month)
+                    describe(s"getting props from factory for period ${tt.testName}") {
+                        val period = Period.getWithYearMonth(tt.testYear, tt.testMonth)
                         val factory = new FactoryHealth()
                         val props: IPropsHealth = factory.getProps(period)
 
@@ -209,8 +222,8 @@ class FactoryHealthTest extends AnyFunSpec {
                         it("GetProps should return props not be nil") {
                             assert(props != null)
                         }
-                        it(s"GetProps should return GetVersionValue = ${tt.expected}") {
-                            assert(tt.expected == props.version.value)
+                        it(s"GetProps should return GetVersionValue = ${tt.resultYear}") {
+                            assert(tt.resultYear == props.version.value)
                         }
                     }
                 })

@@ -1,12 +1,12 @@
 package org.hravemzdy.legalios.providers.period2020
 
 import org.hravemzdy.legalios.interfaces.{IPeriod, IPropsTaxing}
-import org.hravemzdy.legalios.props.PropsTaxing
+import org.hravemzdy.legalios.props.{PropsTaxing, PropsTaxing2018}
 import org.hravemzdy.legalios.providers.{IProviderTaxing, ProviderBase}
 
 class ProviderTaxing2020 extends ProviderBase(HistoryConstTaxing2020.VERSION_CODE) with IProviderTaxing {
   override def getProps(period: IPeriod): IPropsTaxing = {
-    return new PropsTaxing(
+    return new PropsTaxing2018(
       version,
       allowancePayer(period),
       allowanceDisab1st(period),
@@ -19,12 +19,14 @@ class ProviderTaxing2020 extends ProviderBase(HistoryConstTaxing2020.VERSION_COD
       factorAdvances(period),
       factorWithhold(period),
       factorSolidary(period),
+      factorTaxRate2(period),
       minAmountOfTaxBonus(period),
       maxAmountOfTaxBonus(period),
       marginIncomeOfTaxBonus(period),
       marginIncomeOfRounding(period),
       marginIncomeOfWithhold(period),
       marginIncomeOfSolidary(period),
+      marginIncomeOfTaxRate2(period),
       marginIncomeOfWthEmp(period),
       marginIncomeOfWthAgr(period))
   }
@@ -73,6 +75,10 @@ class ProviderTaxing2020 extends ProviderBase(HistoryConstTaxing2020.VERSION_COD
     return HistoryConstTaxing2020.FACTOR_SOLIDARY
   }
 
+  override def factorTaxRate2(period: IPeriod): BigDecimal = {
+    return HistoryConstTaxing2020.FACTOR_TAXRATE2
+  }
+
   override def minAmountOfTaxBonus(period: IPeriod): Int = {
     return HistoryConstTaxing2020.MIN_AMOUNT_OF_TAXBONUS
   }
@@ -95,6 +101,10 @@ class ProviderTaxing2020 extends ProviderBase(HistoryConstTaxing2020.VERSION_COD
 
   override def marginIncomeOfSolidary(period: IPeriod): Int = {
     return HistoryConstTaxing2020.MARGIN_INCOME_OF_SOLIDARY
+  }
+
+  override def marginIncomeOfTaxRate2(period: IPeriod): Int = {
+    return HistoryConstTaxing2020.MARGIN_INCOME_OF_TAXRATE2
   }
 
   override def marginIncomeOfWthEmp(period: IPeriod): Int = {

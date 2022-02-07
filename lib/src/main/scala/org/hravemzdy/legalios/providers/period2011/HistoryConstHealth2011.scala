@@ -1,5 +1,7 @@
 package org.hravemzdy.legalios.providers.period2011
 
+import org.hravemzdy.legalios.providers.period2010.HistoryConstHealth2010
+
 // MIN_MONTHLY_BASIS     Minimální základ zdravotního pojištění na jednoho pracovníka
 //
 // MAX_ANNUALS_BASIS     Maximální roční vyměřovací základ na jednoho pracovníka (tzv.strop)
@@ -21,10 +23,10 @@ object HistoryConstHealth2011 {
 
   val MIN_MONTHLY_BASIS:Int = HistoryConstSalary2011.MIN_MONTHLY_WAGE
   val MAX_ANNUALS_BASIS:Int = 1781280
-  val LIM_MONTHLY_STATE:Int = 0
-  val LIM_MONTHLY_DIS50:Int = 5355
-  val FACTOR_COMPOUND:BigDecimal = BigDecimal("13.5")
-  val FACTOR_EMPLOYEE:BigDecimal = BigDecimal("3")
-  val MARGIN_INCOME_EMP:Int = 2000
-  val MARGIN_INCOME_AGR:Int = MARGIN_INCOME_EMP
+  val LIM_MONTHLY_STATE:Int = HistoryConstHealth2010.LIM_MONTHLY_STATE
+  val LIM_MONTHLY_DIS50:Int = HistoryConstHealth2010.LIM_MONTHLY_DIS50
+  val FACTOR_COMPOUND:BigDecimal = HistoryConstHealth2010.FACTOR_COMPOUND
+  val FACTOR_EMPLOYEE:BigDecimal = HistoryConstHealth2010.FACTOR_EMPLOYEE
+  val MARGIN_INCOME_EMP:Int = HistoryConstHealth2010.MARGIN_INCOME_EMP
+  val MARGIN_INCOME_AGR:Int = HistoryConstHealth2010.MARGIN_INCOME_AGR
 }

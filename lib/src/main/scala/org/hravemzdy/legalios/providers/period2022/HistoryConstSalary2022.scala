@@ -15,7 +15,7 @@ object HistoryConstSalary2022 {
 
     val WORKING_SHIFT_WEEK:Int = HistoryConstSalary2021.WORKING_SHIFT_WEEK
     val WORKING_SHIFT_TIME:Int = HistoryConstSalary2021.WORKING_SHIFT_TIME
-    val MIN_MONTHLY_WAGE:Int = HistoryConstSalary2021.MIN_MONTHLY_WAGE
-    val MIN_HOURLY_WAGE:Int = HistoryConstSalary2021.MIN_HOURLY_WAGE
+    val MIN_MONTHLY_WAGE:Int = 16200
+    val MIN_HOURLY_WAGE:Int = 9640
 }
 

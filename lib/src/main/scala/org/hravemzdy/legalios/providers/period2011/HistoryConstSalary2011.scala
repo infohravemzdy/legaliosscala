@@ -1,5 +1,7 @@
 package org.hravemzdy.legalios.providers.period2011
 
+import org.hravemzdy.legalios.providers.period2010.HistoryConstSalary2010
+
 // WORKING_SHIFT_WEEK      Počet pracovních dnů v týdnu
 //
 // WORKING_SHIFT_TIME      Počet pracovních hodin denně
@@ -11,8 +13,8 @@ package org.hravemzdy.legalios.providers.period2011
 object HistoryConstSalary2011 {
   val VERSION_CODE = 2011
 
-  val WORKING_SHIFT_WEEK:Int = 5
-  val WORKING_SHIFT_TIME:Int = 8
-  val MIN_MONTHLY_WAGE:Int = 8000
-  val MIN_HOURLY_WAGE:Int = 4810
+  val WORKING_SHIFT_WEEK:Int = HistoryConstSalary2010.WORKING_SHIFT_WEEK
+  val WORKING_SHIFT_TIME:Int = HistoryConstSalary2010.WORKING_SHIFT_TIME
+  val MIN_MONTHLY_WAGE:Int = HistoryConstSalary2010.MIN_MONTHLY_WAGE
+  val MIN_HOURLY_WAGE:Int = HistoryConstSalary2010.MIN_HOURLY_WAGE
 }
