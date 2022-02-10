@@ -1,5 +1,6 @@
 package org.hravemzdy.legalios.protokols
 
+import org.hravemzdy.legalios.TestYearsScenario
 import org.hravemzdy.legalios.factories.FactorySalary
 import org.hravemzdy.legalios.interfaces.IPropsSalary
 import org.hravemzdy.legalios.providers.IProviderSalary
@@ -9,8 +10,6 @@ import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class ProtokolSalaryTest extends AnyFunSpec {
-  case class TestYearsScenario(minYear: Int, maxYear: Int)
-
   // 02_Salary_01_WorkingShiftWeek
   describe("GetProps_ShouldExport_WorkingShiftWeek") {
     List(TestYearsScenario(2010, 2022)).foreach(tt => {

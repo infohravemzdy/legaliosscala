@@ -194,7 +194,7 @@ class Service_Legalios_Example_04_Taxing_16_MarginIncomeOfRoundingTest extends A
       TestIntParams( "2022-12", 2022, 12, 2022, 12, 100 ),
     )),
   )
-  // 04_Taxing_15_MarginIncomeOfRounding
+  // 04_Taxing_16_MarginIncomeOfRounding
   ServiceExampleBase.logTestIntExamples("04_Taxing_16_MarginIncomeOfRounding.txt", testList)
   testList.foreach { tx =>
     describe(s"year ${tx.testTitle}") {

@@ -1,5 +1,6 @@
 package org.hravemzdy.legalios.protokols
 
+import org.hravemzdy.legalios.TestYearsScenario
 import org.hravemzdy.legalios.factories.{FactoryHealth, IHealthFactory}
 import org.hravemzdy.legalios.interfaces.IPropsHealth
 import org.hravemzdy.legalios.providers.IProviderHealth
@@ -9,8 +10,6 @@ import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class ProtokolHealthTest extends AnyFunSpec {
-  case class TestYearsScenario(minYear: Int, maxYear: Int)
-
   // 01_Health_01_MinMonthlyBasis
   describe("GetProps_ShouldExport_MinMonthlyBasis") {
     List(TestYearsScenario(2010, 2022)).foreach(tt => {

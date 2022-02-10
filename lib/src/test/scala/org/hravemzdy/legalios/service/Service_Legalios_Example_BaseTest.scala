@@ -9,7 +9,7 @@ import java.io.{File, FileWriter}
 import java.nio.file.Paths
 
 object ServiceExampleBase {
-  val __test_protokol_file__ = true
+  val __test_examples_file__ = true
 
   val EXAMPLE_FOLDER_PATH = "../../../test_expected"
   val EXAMPLE_FOLDER_NAME = "test_expected"
@@ -53,7 +53,7 @@ object ServiceExampleBase {
   }
 
   def logTestIntExamples(fileName : String, tests: List[TestIntScenario]): Unit = {
-    if (__test_protokol_file__) {
+    if (__test_examples_file__) {
       var testLogger = createLoggerFile(fileName)
 
       try {
@@ -77,7 +77,7 @@ object ServiceExampleBase {
   }
 
   def logTestDecExamples(fileName : String, tests: List[TestDecScenario]): Unit = {
-    if (__test_protokol_file__) {
+    if (__test_examples_file__) {
       var testLogger = createLoggerFile(fileName)
 
       try {

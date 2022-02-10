@@ -1,5 +1,6 @@
 package org.hravemzdy.legalios.protokols
 
+import org.hravemzdy.legalios.TestYearsScenario
 import org.hravemzdy.legalios.factories.FactoryTaxing
 import org.hravemzdy.legalios.interfaces.IPropsTaxing
 import org.hravemzdy.legalios.providers.IProviderTaxing
@@ -9,8 +10,6 @@ import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class ProtokolTaxingTest extends AnyFunSpec {
-  case class TestYearsScenario(minYear: Int, maxYear: Int)
-
   // 04_Taxing_01_AllowancePayer
   describe("GetProps_ShouldExport_AllowancePayer") {
     List(TestYearsScenario(2010, 2022)).foreach(tt => {

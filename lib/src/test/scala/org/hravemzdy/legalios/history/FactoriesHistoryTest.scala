@@ -2,7 +2,7 @@ package org.hravemzdy.legalios.history
 
 import org.hravemzdy.legalios.factories.{FactoryHealth, FactorySalary, FactorySocial, FactoryTaxing, IProviderFactory}
 import org.hravemzdy.legalios.interfaces.{IPropsHealth, IPropsSalary, IPropsSocial, IPropsTaxing}
-import org.hravemzdy.legalios.service.ServiceExampleBase.__test_protokol_file__
+import org.hravemzdy.legalios.service.ServiceExampleBase.__test_examples_file__
 import org.hravemzdy.legalios.service.types.Period
 import org.junit.runner.RunWith
 import org.scalatest.funspec.AnyFunSpec
@@ -29,7 +29,7 @@ class FactoriesHistoryTest extends AnyFunSpec {
       TestYearsScenario(2010, 2022),
     ).foreach { tt =>
       it("GetProps should export values") {
-        if (__test_protokol_file__) {
+        if (__test_examples_file__) {
           var testProtokol = createHistoryFile("history_${tt.minYear}_${tt.maxYear}.xls")
 
           try {

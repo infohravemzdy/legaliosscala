@@ -194,7 +194,7 @@ class Service_Legalios_Example_04_Taxing_13_MinAmountOfTaxBonusTest extends AnyF
       TestIntParams( "2022-12", 2022, 12, 2022, 12, 50 ),
     )),
   )
-  // 04_Taxing_12_MinAmountOfTaxBonus
+  // 04_Taxing_13_MinAmountOfTaxBonus
   ServiceExampleBase.logTestIntExamples("04_Taxing_13_MinAmountOfTaxBonus.txt", testList)
   testList.foreach { tx =>
     describe(s"year ${tx.testTitle}") {

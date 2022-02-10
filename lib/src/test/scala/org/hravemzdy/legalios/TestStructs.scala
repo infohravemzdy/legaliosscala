@@ -4,11 +4,11 @@ import org.hravemzdy.legalios.interfaces.{IBundleProps, IProps}
 import org.hravemzdy.legalios.service.errors.HistoryResultError
 import org.scalatest.funspec.AnyFunSpec
 
-case class TestScenario(testTitle: String, tests: Iterable[TestParams])
-case class TestParams(testName: String, testYear: Int, testMonth: Int, resultYear: Int)
-case class TestData(testTitle: String, test: TestParams)
-case class TestIntData(testTitle: String, test: Iterable[TestIntParams])
-case class TestDecData(testTitle: String, test: TestDecParams)
+case class TestYearsScenario(minYear: Int, maxYear: Int)
+case class TestYearExpParams(testName: String, testYear: Int, testMonth: Int, resultYear: Int)
+case class TestYearExpScenario(testTitle: String, tests: Iterable[TestYearExpParams])
+case class TestPeriodParams(title: String, year: Int, month: Int)
+case class TestPeriodScenario(title: String, tests: List[TestPeriodParams])
 
 case class TestDecParams(testName: String, testYear: Int, testMonth: Int, resultYear: Int, resultMonth: Int, resultValue: BigDecimal) {
   def testBasicResult(test: AnyFunSpec, result: Either[HistoryResultError, IBundleProps], bundle: IBundleProps, props: IProps, error: HistoryResultError) : Unit = {

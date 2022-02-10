@@ -1,5 +1,6 @@
 package org.hravemzdy.legalios.protokols
 
+import org.hravemzdy.legalios.TestYearsScenario
 import org.hravemzdy.legalios.factories.FactorySocial
 import org.hravemzdy.legalios.interfaces.IPropsSocial
 import org.hravemzdy.legalios.providers.IProviderSocial
@@ -9,8 +10,6 @@ import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class ProtokolSocialTest extends AnyFunSpec {
-  case class TestYearsScenario(minYear: Int, maxYear: Int)
-
   // 03_Social_01_MaxAnnualsBasis
   describe("GetProps_ShouldExport_MaxAnnualsBasis") {
     List(TestYearsScenario(2010, 2022)).foreach(tt => {
