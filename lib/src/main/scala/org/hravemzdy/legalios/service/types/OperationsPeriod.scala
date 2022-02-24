@@ -171,7 +171,7 @@ object OperationsPeriod {
 
     val indexTable = (dayOrdinal - dayFromOrd)
 
-    if (indexTable < 0 || indexTable >= timeTable.count())
+    if (indexTable < 0 || indexTable >= timeTable.length)
     {
       return 0
     }
