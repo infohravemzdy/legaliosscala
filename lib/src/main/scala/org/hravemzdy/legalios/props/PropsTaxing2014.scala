@@ -70,11 +70,11 @@ class PropsTaxing2014(version: VersionId,
     var withholdIncome: Boolean = false
     if (signOpt != TaxDeclSignOption.DECL_TAX_NO_SIGNED)
     {
-      return withholdIncome
+      return false
     }
     if (noneOpt != TaxNoneSignOption.NOSIGN_TAX_WITHHOLD)
     {
-      return withholdIncome
+      return false
     }
     if (termOpt == WorkTaxingTerms.TAXING_TERM_AGREEM_TASK)
     {
