@@ -1,7 +1,7 @@
 package org.hravemzdy.legalios.protokols
 
 import org.hravemzdy.legalios.TestYearsScenario
-import org.hravemzdy.legalios.factories.{FactoryHealth, IHealthFactory}
+import org.hravemzdy.legalios.factories.{FactoryHealth}
 import org.hravemzdy.legalios.interfaces.IPropsHealth
 import org.hravemzdy.legalios.providers.IProviderHealth
 import org.junit.runner.RunWith
